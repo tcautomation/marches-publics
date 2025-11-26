@@ -36,7 +36,7 @@ jobs:
           PYTHONPATH: src
         run: |
           echo "Lancement de la pipeline veille marchés géomètre..."
-          python scripts/run_pipeline.py
+          python run_pipeline.py
 
       # 5) Vérifier que le fichier final existe
       - name: Check final JSON exists

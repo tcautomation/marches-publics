@@ -1,0 +1,53 @@
+name: Build & Deploy veille marchés géomètre
+
+on:
+  push:
+    branches:
+      - main          # adapte si ta branche par défaut est 'master'
+  workflow_dispatch:  # lancement manuel depuis l'UI GitHub
+  # Optionnel : mise à jour automatique une fois par jour
+  schedule:
+    - cron: "0 6 * * 1-5"   # tous les jours ouvrés à 06:00 UTC
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Récupérer le code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2) Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3) Installer les dépendances
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4) Lancer la pipeline Python pour générer tous les JSON
+      - name: Run data pipeline
+        env:
+          PYTHONPATH: src
+        run: |
+          echo "Lancement de la pipeline veille marchés géomètre..."
+          python scripts/run_pipeline.py
+
+      # 5) Vérifier que le fichier final existe
+      - name: Check final JSON exists
+        run: |
+          ls -al src/marches_geometre/web
+          test -f src/marches_geometre/web/normalized_geometre_latest.json
+
+      # 6) Déploiement GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: src/marches_geometre/web
+          clean: true

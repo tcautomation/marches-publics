@@ -1,0 +1,282 @@
+[
+  {
+    "source": "boamp",
+    "source_notice_id": "25-127510",
+    "reference": "25-127510",
+    "title": "Marché de prestation de géomètre",
+    "description": "Marché de prestation de géomètre",
+    "buyer_name": "COMMUNE DE SOISY-SOUS-MONTMORENCY",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2025-11-19",
+    "deadline_date": "2025-12-15",
+    "deadline_time": "12:00",
+    "url": "https://www.boamp.fr/pages/avis/?q=idweb:25-127510",
+    "extra": {
+      "type_marche": "SERVICES",
+      "descripteur_libelle": "Topographie",
+      "etat": "ANNULATION"
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "boamp",
+    "source_notice_id": "25-123573",
+    "reference": "25-123573",
+    "title": "Marché de prestation de géomètre",
+    "description": "Marché de prestation de géomètre",
+    "buyer_name": "COMMUNE DE SOISY-SOUS-MONTMORENCY",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2025-11-07",
+    "deadline_date": "2025-12-15",
+    "deadline_time": "12:00",
+    "url": "https://www.boamp.fr/pages/avis/?q=idweb:25-123573",
+    "extra": {
+      "type_marche": "SERVICES",
+      "descripteur_libelle": "Topographie",
+      "etat": "INITIAL"
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "boamp",
+    "source_notice_id": "25-123631",
+    "reference": "25-123631",
+    "title": "réalisation de relevés topographiques et de plans des réseaux d'assainissement  (lot 1) et l'étude géologique et géotechnique préalable q (lot 2)",
+    "description": "réalisation de relevés topographiques et de plans des réseaux d'assainissement  (lot 1) et l'étude géologique et géotechnique préalable q (lot 2)",
+    "buyer_name": "SYNDICAT INTERCOMMUNAUTAIRE POUR L'ASSAINISSEMENT DE LA REGION DE CERGY-PONTOISE ET DU VEXIN - SIARP",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2025-11-07",
+    "deadline_date": "2025-12-08",
+    "deadline_time": "12:00",
+    "url": "https://www.boamp.fr/pages/avis/?q=idweb:25-123631",
+    "extra": {
+      "type_marche": "SERVICES",
+      "descripteur_libelle": "Assainissement",
+      "etat": "INITIAL"
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "boamp",
+    "source_notice_id": "25-123130",
+    "reference": "25-123130",
+    "title": "Nettoyage des parkings",
+    "description": "Nettoyage des parkings",
+    "buyer_name": "Ville de Puteaux",
+    "department": "92",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2025-11-06",
+    "deadline_date": "2025-12-09",
+    "deadline_time": "12:00",
+    "url": "https://www.boamp.fr/pages/avis/?q=idweb:25-123130",
+    "extra": {
+      "type_marche": "SERVICES",
+      "descripteur_libelle": "Nettoyage de locaux",
+      "etat": "INITIAL"
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "aws",
+    "source_notice_id": "AO GEOMETRE 2022",
+    "reference": "AO GEOMETRE 2022",
+    "title": "Accord-cadre à bons de commande pour des prestations de géomètre expert et topographe",
+    "description": "Accord-cadre à bons de commande pour des prestations de géomètre expert et topographe",
+    "buyer_name": "VAL D'OISE HABITAT\n                                (95031)",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2022-04-12",
+    "deadline_date": "2022-04-12",
+    "deadline_time": "16h00",
+    "url": "https://www.marches-publics.info/Annonces/MPI-pub-2022104309.htm",
+    "extra": {
+      "category": "SERVICES",
+      "lots_info": "[Marché alloti :\n                                        2\n                                        lots]"
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "aws",
+    "source_notice_id": "22BA15",
+    "reference": "22BA15",
+    "title": "PRESTATIONS DE SERVICES DE GEOMETRES EXPERTS",
+    "description": "PRESTATIONS DE SERVICES DE GEOMETRES EXPERTS",
+    "buyer_name": "Ville de Franconville-la-Garenne\n                                (95130)",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2022-04-20",
+    "deadline_date": "2022-04-20",
+    "deadline_time": "12h26",
+    "url": "https://www.marches-publics.info/Annonces/MPI-pub-2022112119.htm",
+    "extra": {
+      "category": "SERVICES",
+      "lots_info": null
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "aws",
+    "source_notice_id": "2022S16",
+    "reference": "2022S16",
+    "title": "Prestations de géomètre expert",
+    "description": "Prestations de géomètre expert",
+    "buyer_name": "Mairie de Gonesse\n                                (95503)",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2022-09-29",
+    "deadline_date": "2022-09-29",
+    "deadline_time": "23h59",
+    "url": "https://www.marches-publics.info/Annonces/MPI-pub-2022276058.htm",
+    "extra": {
+      "category": "SERVICES",
+      "lots_info": null
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "aws",
+    "source_notice_id": "22FS-0213-E",
+    "reference": "22FS-0213-E",
+    "title": "2023 TOPO : Accord-cadre pour la réalisation de prestations topographiques pour le compte du SIARE",
+    "description": "2023 TOPO : Accord-cadre pour la réalisation de prestations topographiques pour le compte du SIARE",
+    "buyer_name": "S.I.A.R.E\n                                (95230)",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2022-10-24",
+    "deadline_date": "2022-10-24",
+    "deadline_time": "12h00",
+    "url": "https://www.marches-publics.info/Annonces/MPI-pub-2022299256.htm",
+    "extra": {
+      "category": "SERVICES",
+      "lots_info": "[Marché alloti :\n                                        3\n                                        lots]"
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "aws",
+    "source_notice_id": "23AS-0216-V",
+    "reference": "23AS-0216-V",
+    "title": "2023 GEOM : ACCORD-CADRE POUR LA RÉALISATION DE PRESTATIONS DE GÉOMÈTRE-EXPERT POUR LE COMPTE DU SIARE",
+    "description": "2023 GEOM : ACCORD-CADRE POUR LA RÉALISATION DE PRESTATIONS DE GÉOMÈTRE-EXPERT POUR LE COMPTE DU SIARE",
+    "buyer_name": "S.I.A.R.E\n                                (95230)",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2023-01-13",
+    "deadline_date": "2023-01-13",
+    "deadline_time": "15h45",
+    "url": "https://www.marches-publics.info/Annonces/MPI-pub-2023013043.htm",
+    "extra": {
+      "category": "SERVICES",
+      "lots_info": null
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "aws",
+    "source_notice_id": "24AS-CP-0474-T",
+    "reference": "24AS-CP-0474-T",
+    "title": "Prestations de géomètre",
+    "description": "Prestations de géomètre",
+    "buyer_name": "VILLE DE GOUSSAINVILLE\n                                (95191)",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2024-06-05",
+    "deadline_date": "2024-06-05",
+    "deadline_time": "12h00",
+    "url": "https://www.marches-publics.info/Annonces/MPI-pub-2024157254.htm",
+    "extra": {
+      "category": "SERVICES",
+      "lots_info": null
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "aws",
+    "source_notice_id": "2024AO25006300",
+    "reference": "2024AO25006300",
+    "title": "Marché n°2024AO25006300 - Prestations de topographie et de géomètre-expert pour les opérations routières départementales (2 lots)",
+    "description": "Marché n°2024AO25006300 - Prestations de topographie et de géomètre-expert pour les opérations routières départementales (2 lots)",
+    "buyer_name": "Conseil départemental du Val-d'Oise\n                                (95000)",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2024-12-18",
+    "deadline_date": "2024-12-18",
+    "deadline_time": "12h00",
+    "url": "https://www.marches-publics.info/Annonces/MPI-pub-2024355128.htm",
+    "extra": {
+      "category": "SERVICES",
+      "lots_info": "[Marché alloti :\n                                        2\n                                        lots]"
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "aws",
+    "source_notice_id": "Geometre et topogaphe",
+    "reference": "Geometre et topogaphe",
+    "title": "Accord-cadre à bons de commande pour des prestations de géomètre expert et topographe (2 lots)",
+    "description": "Accord-cadre à bons de commande pour des prestations de géomètre expert et topographe (2 lots)",
+    "buyer_name": "VAL D'OISE HABITAT\n                                (95031)",
+    "department": "95",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2025-06-10",
+    "deadline_date": "2025-06-10",
+    "deadline_time": "11h00",
+    "url": "https://www.marches-publics.info/Annonces/MPI-pub-2025163665.htm",
+    "extra": {
+      "category": "SERVICES",
+      "lots_info": "[Marché alloti :\n                                        2\n                                        lots]"
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  },
+  {
+    "source": "maximilien",
+    "source_notice_id": "925651",
+    "reference": "2500188",
+    "title": "MISSION D’ETUDES TECHNIQUES POUR UN DIAGNOSTIC  GEOMETRE  \tDémolition et reconstruction du centre de Secours de Meudon, 5 rue charles",
+    "description": "Le présent marché, régi par le présent AE-CCP, est un marché public de prestation intellectuelle relatif à la mission de relevé géomètre sur le Centre de secours de Meudon, situé au 5 rue Charles Liot (92190). Organisme : PREFECTURE DE POLICE DE PARIS (92) Hauts-de-Seine ... Aucune entreprise inscrite. S'inscrire",
+    "buyer_name": "PREFECTURE DE POLICE DE PARIS (92) Hauts-de-Seine ... Aucune entreprise inscrite. S'inscrire",
+    "department": "92",
+    "city": null,
+    "postal_code": null,
+    "publication_date": "2025-11-18",
+    "deadline_date": "2025-12-18",
+    "deadline_time": "17:30",
+    "url": "https://marches.maximilien.fr/entreprise/consultation/925651?orgAcronyme=a2l&code=&echanges#messagerie",
+    "extra": {
+      "procedure": "MAPA",
+      "category": "Services",
+      "raw_locations": [
+        "(92) Hauts-de-Seine ..."
+      ]
+    },
+    "estimated_budget": null,
+    "estimated_budget_raw": null
+  }
+]

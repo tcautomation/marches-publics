@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Veille marchés géomètre IDF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- On déclare supporter dark & light -->
+    <meta name="color-scheme" content="dark light" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- Thème par défaut : dark, sera éventuellement écrasé par JS -->
+  <body data-theme="dark">
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <div class="header-left">
+            <img src="logo.png" alt="Logo" class="site-logo" />
+            <div>
+                <h1>Veille des marchés publics</h1>
+                <p class="subtitle">
+                Départements <strong>92</strong> · <strong>95</strong> ·
+                <strong>78</strong> — flux consolidé (BOAMP · AWS · Maximilien)
+                </p>
+            </div>
+            </div>
+
+            <div class="header-right">
+            <div class="header-pill">
+                <span class="pill-label">Dernière mise à jour</span>
+                <span id="lastUpdate" class="pill-value">—</span>
+            </div>
+
+            <div class="theme-toggle">
+                <button
+                id="themeToggle"
+                class="toggle-button"
+                type="button"
+                aria-label="Basculer le thème"
+                aria-pressed="true"
+                >
+                <span class="toggle-icon" aria-hidden="true">🌙</span>
+                <span class="toggle-label">Sombre</span>
+                </button>
+            </div>
+            </div>
+
+        </div>
+        </header>
+
+
+    <main class="container main-content">
+      <section class="filters">
+        <div class="filters-row">
+          <label>
+            Département
+            <select id="departmentFilter">
+              <option value="">Tous</option>
+              <option value="92">92</option>
+              <option value="95">95</option>
+              <option value="78">78</option>
+            </select>
+          </label>
+
+          <label>
+            Source
+            <select id="sourceFilter">
+              <option value="">Toutes</option>
+              <option value="boamp">BOAMP</option>
+              <option value="aws">AWS</option>
+              <option value="maximilien">Maximilien</option>
+            </select>
+          </label>
+
+
+          <label>
+            État
+            <select id="seenFilter">
+                <option value="">Tous</option>
+                <option value="seen">Déjà consultés</option>
+                <option value="unseen">Non consultés</option>
+            </select>
+          </label>
+
+
+          <label class="search-label">
+            Recherche
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Titre, acheteur, référence…"
+            />
+          </label>
+        </div>
+      </section>
+
+      <section id="cardsContainer" class="cards-grid">
+        <!-- Cartes injectées ici -->
+      </section>
+
+      <section id="emptyState" class="empty-state" hidden>
+        Aucun résultat ne correspond à vos filtres.
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <small>
+          Données issues de BOAMP, marches-publics.info (AWS) et Maximilien –
+          usage interne uniquement.
+        </small>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -39,7 +39,7 @@ function getNoticeId(notice) {
   return `${notice.source || "?"}-${notice.reference || ""}`;
 }
 
-// ✅ Helper utilisé par le filtre "État"
+// Helper utilisé par le filtre "État"
 function isNoticeSeen(notice) {
   const id = getNoticeId(notice);
   if (!id) return false;
@@ -80,6 +80,16 @@ function isNoticeRecent(publicationDateStr) {
   const diffMs = now.getTime() - d.getTime();
   const diffDays = diffMs / (1000 * 60 * 60 * 24);
   return diffDays <= 7;
+}
+
+// Date de publication la plus récente (pour fallback)
+function computeMaxPublicationDate(notices) {
+  const pubs = (notices || [])
+    .map((n) => n.publication_date)
+    .filter(Boolean)
+    .sort()
+    .reverse();
+  return pubs[0] || null;
 }
 
 // ---------- Gestion du thème ----------
@@ -285,8 +295,9 @@ function createCard(notice) {
 function applyFilters() {
   const dep = document.getElementById("departmentFilter").value;
   const src = document.getElementById("sourceFilter").value.toLowerCase();
-  const search = document.getElementById("searchInput").value
-    .toLowerCase()
+  const search = document
+    .getElementById("searchInput")
+    .value.toLowerCase()
     .trim();
   const seen = document.getElementById("seenFilter").value;
 
@@ -316,7 +327,7 @@ function applyFilters() {
     });
   }
 
-  // 🔥 Filtre consulté / non consulté
+  // Filtre consulté / non consulté
   if (seen === "seen") {
     filtered = filtered.filter((n) => isNoticeSeen(n));
   } else if (seen === "unseen") {
@@ -361,17 +372,28 @@ async function init() {
       throw new Error(`HTTP ${resp.status}`);
     }
     const data = await resp.json();
-    allNotices = data;
 
-    const pubs = allNotices
-      .map((n) => n.publication_date)
-      .filter(Boolean)
-      .sort()
-      .reverse();
-    const maxPub = pubs[0];
+    let generatedAt = null;
+
+    if (Array.isArray(data)) {
+      // Ancien format (juste un tableau)
+      allNotices = data;
+    } else {
+      // Nouveau format : { generated_at, notices }
+      generatedAt = data.generated_at || data.generatedAt || null;
+      allNotices = data.notices || [];
+    }
 
     const lastUpdateEl = document.getElementById("lastUpdate");
-    lastUpdateEl.textContent = maxPub ? formatDateFr(maxPub) : "—";
+
+    if (generatedAt) {
+      // On affiche la date du cron (date d'exécution pipeline)
+      lastUpdateEl.textContent = formatDateFr(generatedAt);
+    } else {
+      // Fallback : date de publication max
+      const maxPub = computeMaxPublicationDate(allNotices);
+      lastUpdateEl.textContent = maxPub ? formatDateFr(maxPub) : "—";
+    }
 
     applyFilters();
   } catch (e) {
@@ -385,7 +407,8 @@ async function init() {
   const themeBtn = document.getElementById("themeToggle");
   if (themeBtn) {
     themeBtn.addEventListener("click", () => {
-      const current = document.body.dataset.theme === "light" ? "light" : "dark";
+      const current =
+        document.body.dataset.theme === "light" ? "light" : "dark";
       const next = current === "dark" ? "light" : "dark";
       applyTheme(next);
     });

@@ -1,4 +1,4 @@
-# scripts/fetch_marches_publics_info.py
+# scripts/fetch_mp_info.py
 
 from __future__ import annotations
 
@@ -20,6 +20,22 @@ logging.basicConfig(
 
 logger = logging.getLogger("fetch_mpinfo")
 
+# ----------------- Mots-clés géomètre -----------------
+
+GEOMETER_KEYWORDS = [
+    "géomètre",
+    "géomètre-expert",
+    "geometre",
+    "geometre-expert",
+    "topographie",
+    "topographique",
+    "bornage",
+    "plan de division",
+    "état descriptif de division",
+    "etat descriptif de division",
+    "EDD",
+]
+
 
 def main() -> None:
     RAW_AWS_DIR = Path("data") / "raw" / "aws"
@@ -30,26 +46,56 @@ def main() -> None:
     )
     client = MpInfoFormClient(config)
 
-    try:
-        notices = client.search_notices(
-            status="en_cours",
-            nature="services",
-            department_code="95",
-            keyword="geomètre",
-            enrich_with_detail=True,
-        )
-    except RuntimeError as exc:
-        logger.error("Erreur lors de la récupération AWS/mpinfo: %s", exc)
-        return
+    # On agrège tous les résultats (tous départements x tous mots-clés)
+    all_notices = []
 
-    logger.info("Nombre d'annonces AWS récupérées: %d", len(notices))
+    departments = ["92", "95", "78"]
+
+    for dep in departments:
+        for kw in GEOMETER_KEYWORDS:
+            logger.info(
+                "Recherche AWS (mp-info) - dep=%s | kw='%s' | status=en_cours | nature=services",
+                dep,
+                kw,
+            )
+            try:
+                notices = client.search_notices(
+                    status="en_cours",
+                    nature="services",
+                    department_code=dep,
+                    keyword=kw,
+                    enrich_with_detail=True,
+                )
+            except RuntimeError as exc:
+                logger.error(
+                    "Erreur lors de la récupération AWS/mpinfo pour dep=%s kw='%s' : %s",
+                    dep,
+                    kw,
+                    exc,
+                )
+                continue
+
+            logger.info(
+                "→ %d annonces trouvées pour dep=%s, kw='%s'",
+                len(notices),
+                dep,
+                kw,
+            )
+            all_notices.extend(notices)
+
+    logger.info(
+        "TOTAL annonces AWS récupérées (tous deps / mots-clés) : %d",
+        len(all_notices),
+    )
 
     today_str = datetime.now().strftime("%Y%m%d")
+    # On garde volontairement le même nom de fichier pour ne rien casser ailleurs
     output_path = RAW_AWS_DIR / f"aws_geometre_expires_95_{today_str}.json"
 
     try:
-        save_notices_to_json(output_path, notices)
-    except OSError:
+        save_notices_to_json(output_path, all_notices)
+    except OSError as exc:
+        logger.error("Erreur lors de l'écriture du JSON AWS brut : %s", exc)
         return
 
     logger.info("JSON AWS brut écrit dans : %s", output_path)

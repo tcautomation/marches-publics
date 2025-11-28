@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import json
 import logging
 from pathlib import Path
 from typing import Optional
+from datetime import datetime, timezone
 
 logging.basicConfig(
     level=logging.INFO,
@@ -51,10 +53,29 @@ def main() -> None:
     web_dir.mkdir(parents=True, exist_ok=True)
     dest = web_dir / WEB_JSON_NAME
 
-    content = latest.read_text(encoding="utf-8")
-    dest.write_text(content, encoding="utf-8")
+    # On lit le JSON dédoublonné (qui est un tableau de notices)
+    raw_content = latest.read_text(encoding="utf-8")
+    try:
+        notices = json.loads(raw_content)
+    except json.JSONDecodeError as e:
+        logger.error("JSON invalide dans %s : %s", latest, e)
+        return
 
-    logger.info("Copie effectuée vers : %s", dest)
+    # Timestamp d'exécution du pipeline (UTC)
+    generated_at = datetime.now(timezone.utc).isoformat()
+
+    payload = {
+        "generated_at": generated_at,
+        "notices": notices,
+    }
+
+    dest.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    logger.info("Fichier web écrit : %s", dest)
+    logger.info("generated_at = %s", generated_at)
     logger.info("Terminée ✅")
 
 

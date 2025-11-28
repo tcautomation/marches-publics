@@ -4,8 +4,8 @@ on:
   # Lance la pipeline à chaque push sur main
   push:
     branches: [ main ]
-  # Et manuellement si tu veux
-  workflow_dispatch:
+  # Et manuellement si besoin
+  workflow_dispatch: {}
 
 permissions:
   contents: read
@@ -14,11 +14,12 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -50,6 +51,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

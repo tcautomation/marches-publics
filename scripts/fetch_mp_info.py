@@ -32,7 +32,7 @@ def main() -> None:
 
     try:
         notices = client.search_notices(
-            status="expires",
+            status="en_cours",
             nature="services",
             department_code="95",
             keyword="geomètre",
